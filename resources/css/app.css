@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+	--font-sans: 'Inter';
+
+	--color-blue: #2e51a2;
+}
+
+@layer base {
+	* {
+		font-family: 'Inter', sans-serif;
+	}
+	
+	select, option, input, textarea, button {
+		font-family: 'Inter', sans-serif !important;
+	}
+}
+
+@keyframes scroll-infinite {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+	animation: scroll-infinite 60s linear infinite;
+	width: max-content;
+}
+
+.animate-scroll-slow {
+	animation: scroll-infinite 90s linear infinite;
+	width: max-content;
+}
